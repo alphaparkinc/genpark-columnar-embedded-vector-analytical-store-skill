@@ -1,0 +1,41 @@
+{
+  "name": "genpark-columnar-embedded-vector-analytical-store-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Columnar embedded vector analytical store executing fast cosine nearest-neighbor queries with metadata predicate pushdown.",
+  "author": "genpark",
+  "category": "vector-analytics",
+  "tags": [
+    "chromadb",
+    "duckdb",
+    "columnar-vector",
+    "parquet-storage",
+    "embedded-database"
+  ],
+  "inputs": {
+    "collection_name": {
+      "type": "string"
+    },
+    "vector_query_embedding": {
+      "type": "array"
+    },
+    "metadata_filter": {
+      "type": "object"
+    }
+  },
+  "outputs": {
+    "analytical_scan_id": {
+      "type": "string"
+    },
+    "columnar_rows_scanned": {
+      "type": "integer"
+    },
+    "in_process_query_latency_ms": {
+      "type": "number"
+    },
+    "duckdb_sqlite_parquet_persisted": {
+      "type": "boolean"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
